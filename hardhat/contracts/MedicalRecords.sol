@@ -67,4 +67,10 @@ contract MedicalRecords {
 
         emit MedicalRecordAdded(msg.sender, _diagnosis);
     }
+
+
+    // fungsi untuk mengambil data pasien dengan getter
+    function getPatient() public view returns (Patient memory) {
+        
+    }
 }
