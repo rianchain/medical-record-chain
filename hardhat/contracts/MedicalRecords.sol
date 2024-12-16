@@ -74,4 +74,10 @@ contract MedicalRecords {
         require(patients[msg.sender].id != 0, "Pasien tidak terdaftar!");
         return patients[msg.sender];
     }
+
+
+    // fungsi untuk mengambil jumlah rekam medis
+    function getMedicalRecordCount() public view returns (uint256) {
+        
+    }
 }
