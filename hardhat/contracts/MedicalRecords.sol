@@ -60,6 +60,11 @@ contract MedicalRecords {
         string memory _pengobatan, 
         string memory _infoTambahan
     ) public {
+        require(patients[msg.sender].id != 0, "Pasien tidak terdaftar!");
 
+        MedicalRecord memory newRecord = MedicalRecord(_diagnosis, _keluhan, _perawatan, _pengobatan, _infoTambahan);
+        patients[msg.sender].medicalRecords.push(newRecord);
+
+        emit MedicalRecordAdded(msg.sender, _diagnosis);
     }
 }
