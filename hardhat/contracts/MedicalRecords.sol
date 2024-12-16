@@ -9,9 +9,10 @@ contract MedicalRecords {
         string nama;
         string alamat;
         string jenisKelamin;
-        string status;
+        string statusKeluarga;
         string golonganDarah;
         string pekerjaan;
+        MedicalRecord[] medicalRecords;
     }
 
 }
