@@ -35,5 +35,14 @@ contract MedicalRecords {
     event MedicalRecordAdded(address indexed patientAddress, string diagnosis);
 
     //fungsi untuk menambahkan pasien
-
+    function addPatient(
+        string memory _nama,
+        string memory _alamat,
+        string memory _jenisKelamin,
+        string memory _statusKeluarga,
+        string memory _golonganDarah,
+        string memory _pekerjaan 
+    ) public {
+        
+    }
 }
