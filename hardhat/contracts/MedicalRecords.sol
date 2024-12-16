@@ -24,6 +24,16 @@ contract MedicalRecords {
         string infoTambahan;
     }
     
+    // state variable untuk menyimpan pasien
     mapping(address => Patient) private patients;
     uint256 private patientCount;
+
+    // event untuk mencatat penambahan pasien
+    event PatientAdded(address indexed patientAddress, uint256 id, string nama);
+
+    // event untuk mencatat penambahan rekam medis
+    event MedicalRecordAdded(address indexed patientAddress, string diagnosis);
+
+    //fungsi untuk menambahkan pasien
+
 }
