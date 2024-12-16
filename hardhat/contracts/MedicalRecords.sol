@@ -43,6 +43,11 @@ contract MedicalRecords {
         string memory _golonganDarah,
         string memory _pekerjaan 
     ) public {
+        require(patients[msg.sender].id == 0, "Pasien sudah terdaftar!");
+        
+        patientCount++;
+        patients[msg.sender] = Patient(patientCount, _nama, _alamat, _jenisKelamin, _statusKeluarga, _golonganDarah, _pekerjaan, new MedicalRecord[](0));
+
         
     }
 }
