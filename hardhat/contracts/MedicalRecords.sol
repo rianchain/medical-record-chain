@@ -8,7 +8,10 @@ contract MedicalRecords {
     struct Patient {
         string nama;
         string alamat;
-        string gender;
+        string jenisKelamin;
+        string status;
+        string golonganDarah;
+        string pekerjaan;
     }
 
 }
