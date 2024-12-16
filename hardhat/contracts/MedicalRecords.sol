@@ -23,5 +23,7 @@ contract MedicalRecords {
         string pengobatan;
         string infoTambahan;
     }
-
+    
+    mapping(address => Patient) private patients;
+    uint256 private patientCount;
 }
