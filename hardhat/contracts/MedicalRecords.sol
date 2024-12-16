@@ -50,4 +50,16 @@ contract MedicalRecords {
 
         emit PatientAdded(msg.sender, patientCount, _nama);
     }
+
+    
+    // fungsi untuk menambahkan rekam medis
+    function addMedicalRecord(
+        string memory _diagnosis,
+        string memory _keluhan,
+        string memory _perawatan,
+        string memory _pengobatan, 
+        string memory _infoTambahan
+    ) public {
+
+    }
 }
