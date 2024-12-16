@@ -22,5 +22,6 @@ contract MedicalRecords {
         string perawatan;
         string pengobatan;
         string infoTambahan;
+    }
 
 }
