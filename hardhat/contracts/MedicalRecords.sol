@@ -71,6 +71,7 @@ contract MedicalRecords {
 
     // fungsi untuk mengambil data pasien dengan getter
     function getPatient() public view returns (Patient memory) {
-        
+        require(patients[msg.sender].id != 0, "Pasien tidak terdaftar!");
+        return patients[msg.sender];
     }
 }
