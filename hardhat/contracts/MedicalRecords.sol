@@ -6,6 +6,7 @@ contract MedicalRecords {
     /// Variable state untuk menampung data pasien:
 
     struct Patient {
+        uint256 id;
         string nama;
         string alamat;
         string jenisKelamin;
@@ -14,5 +15,12 @@ contract MedicalRecords {
         string pekerjaan;
         MedicalRecord[] medicalRecords;
     }
+
+    struct MedicalRecord {
+        string diagnosis;
+        string keluhan;
+        string perawatan;
+        string pengobatan;
+        string infoTambahan;
 
 }
