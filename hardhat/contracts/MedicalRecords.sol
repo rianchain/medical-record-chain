@@ -48,6 +48,6 @@ contract MedicalRecords {
         patientCount++;
         patients[msg.sender] = Patient(patientCount, _nama, _alamat, _jenisKelamin, _statusKeluarga, _golonganDarah, _pekerjaan, new MedicalRecord[](0));
 
-        
+        emit PatientAdded(msg.sender, patientCount, _nama);
     }
 }
