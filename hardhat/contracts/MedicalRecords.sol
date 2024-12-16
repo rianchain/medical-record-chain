@@ -85,6 +85,8 @@ contract MedicalRecords {
 
     // fungsi untuk mengambil rekam medis tertentu
     function getMedicalRecord(uint256 index) public view returns (MedicalRecord memory) {
-        
+        require(patients[msg.sender].id != 0, "Pasien tidak ada!");
+        require(index < patients[msg.sender].medicalRecords.length, "Index tidak valid!");
+        return patients[msg.sender].medicalRecords[index];
     }
 }
