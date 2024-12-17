@@ -10,4 +10,18 @@ const PatientRegistration = ({ contract }) => {
     golonganDarah: "",
     pekerjaan: "",
   });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        const tx = await contract.addPatient(
+            formData.nama,
+            formData.alamat,
+            formData.jenisKelamin,
+            formData.statusKeluarga,
+            formData.golonganDarah,
+            formData.pekerjaan
+        );
+    }
+  };
 };
