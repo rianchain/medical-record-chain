@@ -24,6 +24,24 @@ const PatientRegistration = ({ contract }) => {
       );
       await tx.wait();
       alert("Pasien berhasil didaftarkan!");
-    } catch (error) {}
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Gagal mendaftarkan pasien");
+    }
   };
+
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Form.Group>
+        <Form.Label>Nama</Form.Label>
+        <Form.Control
+          type="text"
+          value={formData.nama}
+          onChange={(e) => setFormData({ ...formData, nama: e.target.value })}
+        />
+      </Form.Group>
+      {/* Tambahkan form field lainnya */}
+      <Button type="submit">Daftar Pasien</Button>
+    </Form>
+  );
 };
