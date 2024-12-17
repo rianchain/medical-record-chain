@@ -136,5 +136,7 @@ contract MedicalRecords {
 
         Patient memory patientData = patients[msg.sender];
         MedicalRecord[] memory medicalRecords = patientMedicalRecords[msg.sender];
+
+        return (patientData, medicalRecords);
     }
 }
