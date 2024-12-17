@@ -105,7 +105,23 @@ const PatientRegistration = ({ contract }) => {
         </Form.Select>
       </Form.Group>
 
-      <Button type="submit">Daftar Pasien</Button>
+      <Form.Group className="mb-3">
+        <Form.Label>Pekerjaan</Form.Label>
+        <Form.Control
+          type="text"
+          value={formData.pekerjaan}
+          onChange={(e) =>
+            setFormData({ ...formData, pekerjaan: e.target.value })
+          }
+          required
+        />
+      </Form.Group>
+
+      <Button variant="primary" type="submit">
+        Daftar Pasien
+      </Button>
     </Form>
   );
 };
+
+export default PatientRegistration;
