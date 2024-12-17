@@ -135,6 +135,6 @@ contract MedicalRecords {
         require(patients[msg.sender].id != 0, "Pasien tidak ada!");
 
         Patient memory patientData = patients[msg.sender];
-        
+        MedicalRecord[] memory medicalRecords = patientMedicalRecords[msg.sender];
     }
 }
