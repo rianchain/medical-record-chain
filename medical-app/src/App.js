@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import PatientRegistration from "./components/PatientRegistration";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ethers } from "ethers";
-import MedicalRecords from "./artifacts/contracts/MedicalRecords.sol/MedicalRecords.json";
+import MedicalRecords from "./contracts/MedicalRecords.sol/MedicalRecords.json";
 
 function App() {
   const [contract, setContract] = useState(null);
