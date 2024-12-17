@@ -133,5 +133,8 @@ contract MedicalRecords {
 
     function getPatientDetail() public view returns (Patient memory, MedicalRecord[] memory) {
         require(patients[msg.sender].id != 0, "Pasien tidak ada!");
+
+        Patient memory patientData = patients[msg.sender];
+        
     }
 }
