@@ -7,12 +7,12 @@ const { API_URL, PRIVATE_KEY } = process.env;
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.28",
-  defaultNetwork: "optimismSepolia",
+  defaultNetwork: "hardhat",
   networks: {
     hardhat: {},
-    optimismSepolia: {
+    hardhat: {
       url: API_URL,
-      accounts: [`0x${PRIVATE_KEY}`],
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
     },
   },
 };
