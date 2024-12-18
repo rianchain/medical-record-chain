@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Tab, Tabs } from "react-bootstrap";
 import PatientRegistration from "./components/PatientRegistration";
+import PatientData from "./components/PatientData";
+import AddMedicalRecord from "./components/AddMedicalRecord";
+import MedicalHistory from "./components/MedicalHistory";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ethers } from "ethers";
-import MedicalRecords from "./contracts/MedicalRecords.sol/MedicalRecords.json";
+import MedicalRecords from "./contracts/Medicalrecords.json";
 
 function App() {
   const [contract, setContract] = useState(null);
+  const [activeTab, setActiveTab] = useState("registration");
 
   useEffect(() => {
     const initContract = async () => {
@@ -20,7 +24,7 @@ function App() {
           const signer = provider.getSigner();
 
           // Ganti dengan alamat kontrak Anda setelah deploy
-          const contractAddress = "ALAMAT_KONTRAK_ANDA";
+          const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
           // Inisialisasi kontrak
           const medicalContract = new ethers.Contract(
@@ -46,7 +50,24 @@ function App() {
     <Container className="py-5">
       <h1 className="text-center mb-4">Sistem Rekam Medis</h1>
       {contract ? (
-        <PatientRegistration contract={contract} />
+        <Tabs
+          activeKey={activeTab}
+          onSelect={(k) => setActiveTab(k)}
+          className="mb-4"
+        >
+          <Tab eventKey="registration" title="Pendaftaran Pasien">
+            <PatientRegistration contract={contract} />
+          </Tab>
+          <Tab eventKey="patientData" title="Data Pasien">
+            <PatientData contract={contract} />
+          </Tab>
+          <Tab eventKey="addRecord" title="Tambah Rekam Medis">
+            <AddMedicalRecord contract={contract} />
+          </Tab>
+          <Tab eventKey="history" title="Riwayat Medis">
+            <MedicalHistory contract={contract} />
+          </Tab>
+        </Tabs>
       ) : (
         <p className="text-center">Menghubungkan ke blockchain...</p>
       )}

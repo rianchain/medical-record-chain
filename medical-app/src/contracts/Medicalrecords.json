@@ -1,0 +1,294 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_diagnosis",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_keluhan",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_perawatan",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_pengobatan",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_infoTambahan",
+        "type": "string"
+      }
+    ],
+    "name": "addMedicalRecord",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_nama",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_alamat",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_jenisKelamin",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_statusKeluarga",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_golonganDarah",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_pekerjaan",
+        "type": "string"
+      }
+    ],
+    "name": "addPatient",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "patientAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "diagnosis",
+        "type": "string"
+      }
+    ],
+    "name": "MedicalRecordAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "patientAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "nama",
+        "type": "string"
+      }
+    ],
+    "name": "PatientAdded",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getMedicalRecord",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "diagnosis",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "keluhan",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "perawatan",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "pengobatan",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "infoTambahan",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getMedicalRecordCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getPatient",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "nama",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "alamat",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "jenisKelamin",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "statusKeluarga",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "golonganDarah",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "pekerjaan",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getPatientDetail",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "nama",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "alamat",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "jenisKelamin",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "statusKeluarga",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "golonganDarah",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "pekerjaan",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct MedicalRecords.Patient",
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "diagnosis",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "keluhan",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "perawatan",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "pengobatan",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "infoTambahan",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct MedicalRecords.MedicalRecord[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
