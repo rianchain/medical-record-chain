@@ -10,7 +10,7 @@ module.exports = {
   defaultNetwork: "optimismSepolia",
   networks: {
     hardhat: {},
-    sepolia: {
+    optimismSepolia: {
       url: API_URL,
       accounts: [`0x${PRIVATE_KEY}`],
     },
